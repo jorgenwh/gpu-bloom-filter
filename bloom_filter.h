@@ -6,11 +6,11 @@
 class BloomFilter {
 public:
   BloomFilter() = default;
-  BloomFilter(int size);
+  BloomFilter(const int size);
   ~BloomFilter() { delete[] table_m; }
 
-  void insert(uint64_t *values, int size);
-  uint64_t get(uint64_t key);
+  void insert(const uint64_t *values, const int size);
+  uint64_t get(const uint64_t key) const;
 private:
   int size_m;
   uint64_t *table_m;
